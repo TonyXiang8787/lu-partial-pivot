@@ -22,9 +22,26 @@ int main() {
     Eigen::Matrix3d matrix;
 
     matrix << 
+        1, -1, 0,
+        -1, 2, -1,
+        0, -1, 100;
+    factorize(matrix);
+
+    matrix << 
         1, 2, 3,
         4, 5, 6,
         7, 8, 9;
-    
+    factorize(matrix);
+
+    matrix <<
+        1, 2, 3,
+        1, 2, 3,
+        5, 9, 10;
+    factorize(matrix);
+
+    matrix <<
+        0, 3, 5,
+        0, 7, 10,
+        0, 15, 17;
     factorize(matrix);
 }
